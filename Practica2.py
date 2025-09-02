@@ -5,17 +5,23 @@ print("La frase es:", frase)
 print("La frase en mayusculas es:", frase.upper())
 print("La frase en minusculas es:", frase.lower())
 print("La frase tiene", len(frase), "caracteres")
-print(f"La {frase} ",frase.split(" "))
+print(f"La {frase} ", frase.split(" "))
 
-for frase in frase.split(" "):
-    print(frase.upper())
-print("Escrscribe una palabra que quieras buscar dentro de la frase")
+for palabra_frase in frase.split(" "):
+    print(palabra_frase.upper())
+
+print("Escribe una palabra que quieras buscar dentro de la frase")
 palabra = input()
-if palabra in frase:
-    print("La palabra", palabra, "se encuentra en la frase")
+if frase.count(palabra) != -1:
+    print(f"La palabra '{palabra}' se encuentra en la frase, y aparece {frase.count(palabra)} veces.")
 else:
-    print("La palabra", palabra, "no se encuentra en la frase")
+    print(f"La palabra{palabra}no se encuentra en la frase")
 
+print("Escribe la palabra que deseas remplazar de la frase")
+palabra_remplazar1 = input()
 
-print("La frase tiene", len(frase), "caracteres")
-print("Fin del programa")
+print("Cual es la palabra que deseas remplazar")
+palabra_remplazar = input()
+
+frase_nueva = frase.replace(palabra_remplazar1, palabra_remplazar)
+print("La nueva frase es:", frase_nueva)
